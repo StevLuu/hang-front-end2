@@ -39,7 +39,7 @@ class CreateNewWordContainer extends React.Component {
 
     createNewWord = async (e) => {
         e.preventDefault()
-        const apiResponse = await fetch("http://localhost:8000/api/words/", {
+        const apiResponse = await fetch(`${apiUrl}/api/words/`, {
             method: "POST",
             body: JSON.stringify(this.state.newWord),
             headers: {
@@ -61,7 +61,7 @@ class CreateNewWordContainer extends React.Component {
         console.log("Lets go get some words")
         console.log(`${apiUrl}/words`)
         // const getWordApiResponse = await fetch(await fetch(`${apiUrl}/words`))
-        const getWordApiResponse = await fetch(`http://localhost:8000/api/words/`)
+        const getWordApiResponse = await fetch(`${apiUrl}/api/words/`)
         //http://localhost:8000/api/words/
         const parsedWords = await getWordApiResponse.json()
         console.log(`words: ${JSON.stringify(parsedWords)}`)
@@ -70,7 +70,7 @@ class CreateNewWordContainer extends React.Component {
         })
     }
     deleteWord = async (idToDelete) => {
-        const deleteResponse = await fetch(`http://localhost:8000/api/words/${idToDelete}/`, {
+        const deleteResponse = await fetch(`${apiUrl}/api/words/${idToDelete}/`, {
             method: "DELETE"
         })
         console.log(`delete status: ${(deleteResponse.status)}`)
@@ -94,7 +94,7 @@ class CreateNewWordContainer extends React.Component {
 
 
     updateWord = async (idToUpdate) => {
-        const apiResponse = await fetch(`http://localhost:8000/api/words/${idToUpdate}/`, {
+        const apiResponse = await fetch(`${apiUrl}/api/words/${idToUpdate}/`, {
             method: "PUT",
             body: JSON.stringify(this.state.updateWord),
             headers: {

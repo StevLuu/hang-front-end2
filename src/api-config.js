@@ -1,8 +1,8 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: 'https://poke-backend-app.herokuapp.com',
-	development: 'http://localhost:8000/api',
+	production: 'https://immense-atoll-25235.herokuapp.com',
+	development: 'http://localhost:8000',
 }
 
 if (window.location.hostname === 'localhost') {
